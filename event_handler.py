@@ -22,8 +22,6 @@ async def ch_pr():
 
     await client.change_presence(activity=discord.Game(name=status))
 
-    print(f"Status set and changed!")
-
     await sleep(10)
 
 def ready_bot(client_name, token, cogs_enabled):
