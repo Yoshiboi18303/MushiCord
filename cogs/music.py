@@ -26,14 +26,14 @@ class Music(commands.Cog):
   async def disconnect(self, ctx):
     voice_client = ctx.voice_client
     if voice_client is None:
-      return await ctx.send(f"<@{ctx.author.id}>, I'm not in a voice channel!")
+      return await ctx.send(msgreply(ctx.author, "I'm not in a voice channel!"))
     else:
       await voice_client.disconnect()
   @commands.command(help="Plays a certain song in the voice channel you're in via YouTube URL!", usage=f"mshi?play <song_url>")
   # @commands.has_permissions(connect=True)
   async def play(self, ctx, url):
     if ctx.author.voice is None:
-      return await ctx.send('Please join a Voice Channel!')
+      return await ctx.send(msgreply(ctx.author, "Please join a Voice Channel!"))
     voice_channel = ctx.author.voice.channel
     voice_client = ctx.voice_client
     if voice_client is None:
@@ -53,7 +53,7 @@ class Music(commands.Cog):
   @commands.command(help="Pauses the music that is playing in the Voice Channel you're in!", usage="mshi?pause")
   async def pause(self, ctx):
     if ctx.author.voice is None:
-      return await ctx.send("Please join a Voice Channel!")
+      return await ctx.send(msgreply(ctx.author, "Please join a Voice Channel!"))
     voice_client = ctx.voice_client
     await ctx.send('Paused the music!')
     await voice_client.pause()
@@ -65,11 +65,22 @@ class Music(commands.Cog):
   @commands.command(help="Stops the music.", usage="mshi?stop")
   async def stop(self, ctx):
     if ctx.author.voice is None:
-      return await ctx.send("Please join a Voice Channel!")
+      return await ctx.send(msgreply(ctx.author, "Please join a Voice Channel!"))
     voice_client = ctx.voice_client
     await ctx.send(f'Music stopped!')
     await voice_client.stop()
-
+  # @commands.command(help="Loops the current song!", usage="mshi?loop")
+  # async def loop(self, ctx):
+  #   if ctx.author.voice is None:
+  #     return await ctx.send(msgreply(ctx.author, "Please join a Voice Channel!"))
+  #   else:
+  #     voice_client = ctx.voice_client
+  #     await ctx.send('Song looping!')
+  #     await voice_client.loop()
+  @commands.command(help="Seek to a certain point in the current song!", usage="mshi?seek {time in milliseconds}")
+  async def seek(self, ctx, *, time_to_seek):
+    time_to_seek = int(time_to_seek)
+    await ctx.send(msgreply(ctx.author, "Coming soon!"))
 
 def setup(client):
   client.add_cog(Music(client))

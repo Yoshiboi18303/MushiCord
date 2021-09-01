@@ -19,7 +19,8 @@ class Member_Listeners(commands.Cog):
     join.set_thumbnail(url=member.avatar_url)
     join.set_footer(text=f"{member.guild.name} now has {true_member_count} members and {members} including bots")
     channel = self.bot.get_channel(882059505419026483)
-    await channel.send(embed=join)  
+    await channel.send(embed=join)
+    await member.add_role(882299205740290048)
     
   @commands.Cog.listener()
   async def on_member_remove(self, member):

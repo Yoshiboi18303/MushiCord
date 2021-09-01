@@ -14,7 +14,7 @@ class Client_Guild_Events(commands.Cog):
     join_embed = discord.Embed(title="Joined a guild", color=discord.Color.green(), description="The client joined a guild!")
     join_embed.add_field(name="Guild Name", value=guild.name)
     join_embed.add_field(name="Members In Guild", value=members)
-    join_embed.add_field(name="New Guild Count", value=len(self.client.guilds) + 1)
+    join_embed.add_field(name="New Guild Count", value=len(self.client.guilds))
     await channel.send(embed = join_embed)
     print("The client joined a guild!")
   @commands.Cog.listener()
@@ -25,7 +25,7 @@ class Client_Guild_Events(commands.Cog):
     join_embed = discord.Embed(title="Left a guild", color=discord.Color.red(), description="The client left a guild...")
     join_embed.add_field(name="Guild Name", value=guild.name)
     join_embed.add_field(name="Members In Guild", value=members)
-    join_embed.add_field(name="New Guild Count", value=len(self.client.guilds) - 1)
+    join_embed.add_field(name="New Guild Count", value=len(self.client.guilds))
     await channel.send(embed = join_embed)
     print("The client got removed from a guild...")
 

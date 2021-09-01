@@ -1,4 +1,4 @@
-[tool.poetry]
+ [tool.poetry]
 name = "MushiCord"
 version = "0.1.0"
 description = "A super EPIC Music Discord bot made by Yoshiboi18303#4045 that can help you play many songs from YouTube with just a URL!"
@@ -9,6 +9,7 @@ python = "^3.8"
 discord = "^1.7.3"
 youtube_dl = "^2021.6.6"
 PyNaCl = "^1.4.0"
+Flask = "^2.0.1"
 
 [tool.poetry.dev-dependencies]
 
