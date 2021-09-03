@@ -17,7 +17,7 @@ async def ch_pr():
   "music bot made by Yoshiboi18303#4045",
   f"made by Yoshiboi18303#4045 and hosted on SoloNodes! | {client.command_prefix}host",
   f"{client.command_prefix}help",
-  f"with all {client.commands()} commands | {client.command_prefix}help"
+  f"with all {len(client.commands)} commands | {client.command_prefix}help"
   ]
 
   while not client.is_closed():
@@ -25,7 +25,7 @@ async def ch_pr():
 
     await client.change_presence(activity=discord.Game(name=status), status=discord.Status.online)
 
-    await sleep(10)
+    await sleep(30)
   
 def ready_bot(client_name, token, cogs_enabled):
 

@@ -22,14 +22,14 @@ class Music(commands.Cog):
     else:
       await voice_client.move_to(voice_channel)
     await ctx.send("Joined the voice channel!")
-  @commands.command(help="Disconnects the client from the current voice channel it's in!", usage=f"mshi?disconnect", aliases=['dc'])
+  @commands.command(help="Disconnects the client from the current voice channel it's in!", usage=f"mshi?disconnect", aliases=['dc','leave'])
   async def disconnect(self, ctx):
     voice_client = ctx.voice_client
     if voice_client is None:
       return await ctx.send(msgreply(ctx.author, "I'm not in a voice channel!"))
     else:
       await voice_client.disconnect()
-  @commands.command(help="Plays a certain song in the voice channel you're in via YouTube URL!", usage=f"mshi?play <song_url>")
+  @commands.command(help="Plays a certain song in the voice channel you're in via YouTube (or SoundCloud) URL!", usage=f"mshi?play <song_url>")
   # @commands.has_permissions(connect=True)
   async def play(self, ctx, url):
     if ctx.author.voice is None:
@@ -42,7 +42,7 @@ class Music(commands.Cog):
       await ctx.send('Connected! Please run the command again!')
     else:
       FFMPEG_OPTIONS = {'before_options': '-reconnect 1 -reconnect_streamed 1 -reconnect_delay_max 5', 'options': '-vn'}
-      YDL_OPTIONS = {'format':"bestaudio"}
+      YDL_OPTIONS = {'format': "bestaudio"}
 
       with youtube_dl.YoutubeDL(YDL_OPTIONS) as ydl:
         info = ydl.extract_info(url, download=False)

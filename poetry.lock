@@ -192,6 +192,24 @@ docs = ["sphinx (>=1.6.5)", "sphinx-rtd-theme"]
 tests = ["pytest (>=3.2.1,!=3.3.0)", "hypothesis (>=3.27.0)"]
 
 [[package]]
+name = "pyspotify"
+version = "2.1.3"
+description = "Python wrapper for libspotify"
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+cffi = ">=1.0.0"
+
+[package.extras]
+dev = ["invoke", "mock", "sphinx", "black", "check-manifest", "flake8", "flake8-bugbear", "flake8-import-order", "isort", "delocate", "twine", "wheel", "mock", "pytest", "pytest-cov"]
+docs = ["mock", "sphinx"]
+lint = ["black", "check-manifest", "flake8", "flake8-bugbear", "flake8-import-order", "isort"]
+release = ["delocate", "twine", "wheel"]
+test = ["mock", "pytest", "pytest-cov"]
+
+[[package]]
 name = "six"
 version = "1.16.0"
 description = "Python 2 and 3 compatibility utilities"
@@ -241,7 +259,7 @@ python-versions = "*"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "64ecba5a42bf7ac3a071e7fdbb538b8d36f0e6898ae19355bed70de527fad6e5"
+content-hash = "4fd25b2e9af465650ccdd2163ce53029f0aa31f4ef89612fb6ef562d81ad0767"
 
 [metadata.files]
 aiohttp = [
@@ -492,6 +510,13 @@ pynacl = [
     {file = "PyNaCl-1.4.0-cp38-cp38-win32.whl", hash = "sha256:9c4a7ea4fb81536c1b1f5cc44d54a296f96ae78c1ebd2311bd0b60be45a48d96"},
     {file = "PyNaCl-1.4.0-cp38-cp38-win_amd64.whl", hash = "sha256:7c6092102219f59ff29788860ccb021e80fffd953920c4a8653889c029b2d420"},
     {file = "PyNaCl-1.4.0.tar.gz", hash = "sha256:54e9a2c849c742006516ad56a88f5c74bf2ce92c9f67435187c3c5953b346505"},
+]
+pyspotify = [
+    {file = "pyspotify-2.1.3-cp27-cp27m-macosx_10_15_x86_64.whl", hash = "sha256:457de7918ba41e41dad0e40dc2b8345ddfed60c04363904ea63ce0587bed6168"},
+    {file = "pyspotify-2.1.3-cp27-cp27m-macosx_10_6_intel.whl", hash = "sha256:403cf27d866f5ba9d25ec91ff5134f7876a30a74c8719575baa5e6be2b127937"},
+    {file = "pyspotify-2.1.3-cp37-cp37m-macosx_10_15_x86_64.whl", hash = "sha256:f6122797197552740bb2bb5d0b6dada51ef4a52bc87cc09ebda35c2040b65f1c"},
+    {file = "pyspotify-2.1.3-cp37-cp37m-macosx_10_6_intel.whl", hash = "sha256:7ba75c3ad1c8e4fa3578cce0660d4d4b1411735d6aed86dc26e2fba4f823e4bf"},
+    {file = "pyspotify-2.1.3.tar.gz", hash = "sha256:6ae31d8ccd7e1f138a80f08c766173b2ced12d196732f68aee4ae023b7a9ad2a"},
 ]
 six = [
     {file = "six-1.16.0-py2.py3-none-any.whl", hash = "sha256:8abb2f1d86890a2dfb989f9a77cfcfd3e47c2a354b01111771326f8aa26e0254"},
