@@ -14,16 +14,19 @@ async def ch_pr():
   f"music in {len(client.guilds)} servers",
   f"with {len(client.users)} users in {len(client.guilds)} servers!",
   f"on {len(client.guilds)} servers!",
-  "music bot made by Yoshiboi18303#4045"
+  "music bot made by Yoshiboi18303#4045",
+  f"made by Yoshiboi18303#4045 and hosted on SoloNodes! | {client.command_prefix}host",
+  f"{client.command_prefix}help",
+  f"with all {client.commands()} commands | {client.command_prefix}help"
   ]
 
   while not client.is_closed():
     status = choice(statuses)
 
-    await client.change_presence(activity=discord.Game(name=status))
+    await client.change_presence(activity=discord.Game(name=status), status=discord.Status.online)
 
     await sleep(10)
-
+  
 def ready_bot(client_name, token, cogs_enabled):
 
   if client_name is not str(client_name):
@@ -45,7 +48,7 @@ def ready_bot(client_name, token, cogs_enabled):
   @client.event
   async def on_command_error(ctx, error):
     if isinstance(error, commands.MissingRequiredArgument):
-      await ctx.send(msgreply(ctx.author, "Please pass in all required arguments."))
+      await ctx.send(msgreply(ctx.author, f"Please pass in all required arguments. Run {client.command_prefix}help <command> for more info on the arguments!"))
     elif isinstance(error, commands.BotMissingPermissions):
       await ctx.send(msgreply(ctx.author, "The client doesn't have the right permissions to use this command!"))
     elif isinstance(error, commands.NotOwner):
