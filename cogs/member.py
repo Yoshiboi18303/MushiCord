@@ -18,7 +18,7 @@ class Member_Listeners(commands.Cog):
     join = discord.Embed(title="Member Joined", description=f"{member.mention} ({member}) joined the server on {datetime.date}", color=0x0000ff)
     join.set_thumbnail(url=member.avatar_url)
     join.set_footer(text=f"{member.guild.name} now has {true_member_count} members and {members} including bots")
-    channel = self.bot.get_channel(882059505419026483)
+    channel = self.bot.get_channel(882290359827308575)
     await channel.send(embed=join)
     await member.add_role(882299205740290048)
     
