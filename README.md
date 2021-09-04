@@ -13,7 +13,7 @@ Click [here](https://discord.com/oauth2/authorize?client_id=868715163962990622&s
 ---
 
 ## Using the bot
-Start by joining a Voice Channel in your server, then run `mshi?join` and MushiCord should connect to your Voice Channel, then find your favorite song on [YouTube](https://www.youtube.com), or [SoundCloud]() and then run `mshi?play <url>` to start playing music!
+Start by joining a Voice Channel in your server, then run `mshi?join` and MushiCord should connect to your Voice Channel, then find your favorite song on [YouTube](https://www.youtube.com), or [SoundCloud](https://soundcloud.com) and then run `mshi?play <url>` to start playing music!
 > Give the bot a moment after you run the command, as it needs to download an entire webpage (and initialize a player if one doesn't exist yet for your server).
 
 ---
